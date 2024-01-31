@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Homework 01</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .left {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .right {
+    flex: 1;
+    padding: 20px;
+    background-color: #b4b4b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #ff7300;
+  }
+  
+  .content {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
+  
+  .text {
+    color: #333;
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+
+    @media screen and (max-width: 768px) {
+        .container {
+        flex-direction: column;
+        }
+        .left {
+        flex: 1;
+        }
+        .right {
+        flex: 1;
+        }
+    }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>CSS homework 01</h1>
+  </div>
+  <div class="container">
+    <div class="left">
+      <img src="photo_2024-01-29_21-48-01.jpg" alt="Your Image" class="content">
+      <h2>馬利歐</h2>
+      <p class="text">這是馬利歐</p>
+      <p class="text">我覺得很酷</p>
+      <p class="text">就放出來看看</p>
+    </div>
+    <div class="right">
+      <div>
+        <p class="text">這裡是右側的文字</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

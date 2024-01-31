@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Animation</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+  }
+
+  .tire {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 20px solid #333;
+    position: relative;
+    animation: rotate 2s linear infinite, burn 1s alternate infinite;
+    overflow: hidden;
+  }
+
+  .drum {
+    width: 100px;
+    height: 10px;
+    background-color: #ccb69c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: -1;
+  }
+
+  .drum:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(60deg);
+  }
+
+  .drum:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+
+  .drum:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  .drum:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(240deg);
+  }
+
+  .drum:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(300deg);
+  }
+
+  .tire::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    z-index: 1;
+  }
+
+  .tire:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #afafaf;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    z-index: -1;
+  }
+
+  .tire:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #afafaf;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+
+  .text {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #9b9b9b;
+    margin-left: 20px;
+    animation: bounce 1s alternate infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes burn {
+    0%, 100% {
+      border-color: #333;
+    }
+    50% {
+      border-color: #ff6c00;
+    }
+  }
+
+    @keyframes bounce {
+        0%, 100% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(-10px);
+        }
+    }
+</style>
+</head>
+<body>
+  <div class="tire">
+    <div class="drum"></div>
+    <div class="drum"></div>
+    <div class="drum"></div>
+    <div class="drum"></div>
+    <div class="drum"></div>
+    <div class="drum"></div>
+  </div>
+  <p class="text">Loading...</p>
+</body>
+</html>

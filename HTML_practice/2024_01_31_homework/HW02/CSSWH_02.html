@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS HW 02</title>
+<style>
+.Upper_block {
+    background-color: rgb(89,177,212);
+    min-height: 10px;
+    height:auto;
+    user-select: none;
+}
+
+.Language_Choose {
+    font-size: 16px;
+    color:rgb(255, 255, 255);
+    cursor:default;
+    display:block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.Blank{
+height: 138px;
+background-color: white;
+width:100%;
+margin-top: 15px;
+position: absolute;
+z-index: -10;
+}
+
+.Name{
+    display:inline-block;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #F9EEB6;
+    text-decoration: none;
+    user-select: none;
+    width: 100%;
+    background-color:#59B1D4 ;
+    clip-path: polygon(0px 0px, 65% 0px, 58% 90px, 0px 100px);
+}
+
+.School_Name{
+    display:inline-block;
+    font-size: 20px;
+    line-height: 1rem;
+    margin:3px 0px;
+}
+
+.Department_Name{
+    display:inline-block;
+    font-size: 38px;
+    letter-spacing: 8px;
+    margin:0px -8px 0px 10px;
+}
+
+.Stickers{
+    position:absolute;
+    float:right;
+    right: 35px;
+    top: 45px;
+    justify-content: flex-end;
+}
+
+.Sticker1{
+    width: 45px;
+}
+
+.Sticker2{
+    width: 45px;
+}
+
+.login_icon{
+    width:75px;
+    height: 40px;
+    background-color: rgb(78,157,189);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list-group{
+    user-select: none;
+    display:block;
+    position: relative;
+    z-index: 3000;
+}
+
+.list-group-item{
+    display:flex;
+    gap:10px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    color:#87543E;
+    font-size: 22px;
+}
+
+.items{
+    display:flex;
+    flex:0 1 auto;
+    position:relative;
+    max-width: 100%;
+}
+
+.list-arrow-left{
+    align-items: center;
+    display: flex;
+    flex:0 1 52px;
+    justify-content: center;
+    min-width: 52px;
+    cursor: pointer;
+}
+
+.arrow-left{
+    width: 50px;
+    height: 50px;
+    fill: rgb(89,177,212);
+}
+
+.item-container{
+    display:flex;
+    flex:1 1 auto;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.item-content{
+    display:flex;
+    flex:1 0 auto;
+    position: relative;
+    transition: .6s cubic-bezier(.25,.8,.5,.1);
+    white-space: nowrap;
+}
+
+.content{
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+    background-color: transparent;
+    height: 50px;
+}
+
+.list-arrow-right{
+    align-items: center;
+    display: flex;
+    flex:0 1 52px;
+    justify-content: center;
+    min-width: 52px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div>
+        <div class="Upper_block">
+            <div class="Language_Choose">
+                <a class="Traditional Chinese">繁體中文</a>
+                <a class="span">|</a>
+                <a class="English">English</a>
+            </div>
+        </div>
+        <div class="Blank"></div>
+        <div class="Name">
+            <a class="School_Name">國立台中教育大學</a>
+            <br>
+            <a class="Department_Name">資訊工程學系</a>
+        </div>
+        <div class="Stickers">
+            <img class="Sticker1" src="photo_2024-01-30_20-55-45.jpg">
+            <img class="Sticker2" src="photo_2024-01-30_20-57-05.jpg">
+            <a class="login_icon">Login</a>
+        </div>
+        <div class="list-group">
+            <div class="list-group-items" style="position:relative;">
+                <div class="items">
+                    <div class="list-arrow-left">
+                        <a class="arrow-left" style="font-size: 30px;">&lt;</a>
+                    </div>
+                    <div class="item-container">
+                        <div class="item-content" style="gap:15px; transform: translateX(0px)">
+                            <a class="content">訊息1</a>
+                            <a class="content">訊息2</a>
+                            <a class="content">訊息3</a>
+                            <a class="content">訊息4</a>
+                            <a class="content">訊息5</a>
+                        </div>
+                    </div>
+                    <div class="list-arrow-right">
+                        <a class="arrow-right" style="font-size: 30px;">&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
