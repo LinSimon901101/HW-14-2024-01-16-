@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<title>
+    HW02
+</title>
+<style>
+.Top_Block{
+    user-select: none;
+    background-color: rgb(89, 177, 212);
+    min-height: 10px;
+    height: auto;
+}
+.Block{
+    font-size: 16px;
+    color: white;
+    cursor: default;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.White_Blank{
+    background-color: white;
+    width: 100%;
+    height: 138px;
+    margin-top: 15px;
+    position: absolute;
+    z-index: -10;
+}
+
+.Topic_Block{
+    clip-path: polygon(0px 0px, 65% 0px, 58% 90px, 0px 100px);
+    user-select: none;
+    margin-top: 8px;
+    background-color: #59B1D4;
+}
+.Name_Block{
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 500;
+    color: #F9EEB6;
+    text-decoration: none;
+}
+
+.School_Name{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1rem;
+    margin: 3px 0px;
+}
+
+.Deparment_Name{
+    display: inline-block;
+    font-size: 38px;
+    letter-spacing: 8px;
+    margin: 0px -8px 0px 10px;
+}
+
+.Icon_Block{
+    position: absolute;
+    float: right;
+    right: 35px;
+    top: 45px;
+    user-select: none;
+    display: block;
+}
+
+.Icons{
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 8px;
+}
+
+.icon01{
+    margin-top: 0;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.icon02{
+    margin-top: 0;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.icon03{
+    width: 75px;
+    height: 40px;
+    background-color: rgb(78, 157, 189);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 16;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Listing_Block{
+    user-select: none;
+    display: block;
+    position: relative;
+    z-index: 3000;
+}
+
+.List_Block{
+    display: flex;
+    gap:10px;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    color:brown;
+    font-size: 22px;
+}
+
+.List_Group{
+    display: flex;
+    flex:0 1 auto;
+    position: relative;
+    max-width: 100%;
+}
+
+.slide_arrow{
+    align-items: center;
+    display: flex;
+    flex: 0 1 52px;
+    justify-content: center;
+    min-width: 52px;
+    cursor: pointer;
+}
+
+.slide_group_arrow{
+    width:50px;
+    height:50px;
+    color:rgb(89, 177, 212);
+    font-weight: 500;
+}
+
+.List_container{
+    display: flex;
+    flex:1 1 auto;
+    touch-action: none;
+    overflow: hidden;
+}
+
+.list_content{
+    display: flex;
+    flex:1 0 auto;
+    position: relative;
+    transition: .6s cubic-bezier(.25, .8, .5, .1);
+    white-space: nowrap;
+}
+
+.Contents{
+    position: relative;
+    top: 20%;
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+    background-color: transparent;
+    height: 50px;
+}
+
+.content{
+    z-index: 1000;
+    position: absolute;
+    width: auto;
+    height: 50px;
+    top: 2px;
+    overflow-wrap: normal;
+    cursor: pointer;
+    font-weight: 600;
+    font-size:larger;
+}
+
+.content_topic{
+    display: inline-block;
+    width: 130px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: brown;
+    font-size: 16px;
+    position: relative;
+    top: -6px;
+    padding: 3px 0px;
+    margin-bottom: -6px;
+    border-radius: 3px;
+}
+
+.Location{
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.route{
+    color:#59B1D4;
+    font-size: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.route_arrow{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.first_block{
+    padding:0px 30px;
+}
+
+.secondary_block{
+    max-width: 1100px;
+    width:100%;
+    margin:auto;
+    position:relative;
+}
+
+.location_icon{
+    display:block;
+    width:264px;
+    height:auto;
+    fill: #F2BC9D;
+}
+
+.icon_name{
+    fill:white;
+    font-size: 30px;
+}
+
+.main_list{
+    width:100%;
+    margin:50px auto;
+}
+
+.upper_list{
+    width:auto;
+    background-color: white;
+    border-radius: 20px;
+    padding:10px 12px;
+}
+
+.upper_list_content{
+    display: flex;
+    padding:30px 0px;
+    width:auto;
+    border: #59B1D4 2px solid;
+    border-radius: 20px;
+    flex: wrap;
+}
+
+.upper_list_content_topic1{
+    background-color: #59B1D4;
+    color: white;
+    cursor: pointer;
+    padding: 8px 20px;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    world-wrap: break-word;
+    text-decoration: none;
+}
+
+.upper_list_content_topic{
+    cursor:pointer;
+    padding: 0px 20px;
+}
+
+.lower_list{
+    width:100%;
+    background-color: #58829A;
+    border:15px;
+    padding:15px 0px;
+    margin-top: 20px;
+    display: block;
+}
+
+.lower_list_container{
+    width:90%;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 300px;
+    margin:0px auto;
+    padding:5px 0px 40px;
+}
+
+.lower_list_block{
+    width: 90%;
+    min-height: 460px;
+    margin: 10px auto;
+}
+
+.lower_list_content{
+    margin:0px 24px;
+    border-bottom: 3px #58829A solid;
+    padding:14px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: wrap;
+}
+
+.lower_list_content_topic{
+    margin-bottom: 0px;;
+    word-break: break-word;
+    flex: 5 1 80%;
+    font-size: 16px;
+}
+
+.functional_button{
+    float: right;
+    color: #58829A;
+    font-weight: 550;
+    font-size: 16px;
+    padding:5px 10px;
+    margin: auto;
+    white-space: nowrap;
+    display: block;
+}
+
+.button{
+    color: #58829A;
+    cursor:pointer;
+    text-decoration: none;
+    display: inline;
+}
+
+.pages_block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pages_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.page_button{
+    cursor: pointer;
+    text-decoration: none;
+    color: #58829A;
+    padding: 5px 10px;
+    border: 1px #58829A solid;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0px 5px;
+}
+
+.footer_block{
+    background-color: #5882C9;
+    color: white;
+    padding:20px 5% 5px;
+    height:auto;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.footer_content{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.big_icon{
+    display: inline-block;
+    margin-right: 20px;
+    width:150px;
+    height:150px;
+}
+
+.footer_information{
+    display: block;
+    width: 100%;
+}
+
+.footer_topic{
+    font-size: 32px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    display: block;
+    word-wrap: break-word;
+    font-weight: 1000;
+}
+
+.text01{
+    font-size: 16px;
+    margin-top: 0 ;
+    margin-bottom: 0;
+    word-wrap: break-word;
+}
+
+.text02{
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #F9EEB6;
+}
+
+.copy_right_wronging{
+    opacity: 0.7;
+    font-size: 11px;
+    text-align: center;
+    white-space: normal;
+    margin-top: 10px;
+    border-top: 1px solid white;
+    line-height: 30px;
+    margin-bottom: 0;
+    word-wrap: break-word;
+}
+
+</style>
+<body>
+    <div class="page">
+
+        <div class="Top_Block">
+            <div class="Block">
+                <a class="Language_01">繁體中文 Traditional Chinese</a>
+                <span> &ensp; | &ensp; </span>
+                <a class="Language_02">英文English</a>
+            </div>
+        </div>
+        <!-- End of top block -->
+
+        <div class="White_Blank"></div>
+        <!-- End of white blank -->
+
+        <div class="Topic_Block">
+            <div class="Name_Block">
+                <p class="School_Name">國立臺中教育大學</p>
+                <br>
+                <p class="Deparment_Name">資訊工程學系</p>
+            </div>
+        </div>
+        <!-- End of topic block -->
+
+        <div class="Icon_Block">
+            <div class="Icons">
+                <div class="icon01">
+                    <img src="icon01.png" alt="icon01" width="60px">
+                </div>
+                <div class="icon02">
+                    <img src="icon02.png" alt="icon02" width="60px">
+                </div>
+                <p class="icon03">Login</p>
+            </div>
+        </div>
+        <!-- End of icon block -->
+
+        <div class="Listing_Block">
+            <div class="List_Block" style="position:relative;">
+                <div class="List_Group">
+                    <div class="slide_arrow">
+                        <p class="slide_group_arrow"><</p>
+                    </div>
+                    <div class="List_container">
+                        <div class="list_content" style="gap: 15px; transform:translateX(0px);">
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">訊息公告</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">系所成員</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">系所介紹</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">招生資訊</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">學生資訊</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">學術研究</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">活動紀錄</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">法規表單</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">獲獎公告</a>
+                                </div>
+                            </div>
+                            <div class="Contents">
+                                <div class="content">
+                                    <a class="content_topic">實習資訊</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_arrow">
+                        <p class="slide_group_arrow">></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of listing block -->
+
+        <div class="Location">
+            <div class="route">首頁</div>
+            <img class="route_arrow" src="route_icon.png" alt="route_arrow" width="20px">
+            <div class="route">法規表單</div>
+        </div>
+        <!-- End of location -->
+
+        <main class style="min-height:46.9vh;">
+            <div class="first_block">
+                <div class="secondary_block">
+                    <svg width="auto" height="66" class="location_icon">
+                        <polygon points="0,0 220,20 264,66 0,66"></polygon>
+                        <text x="27" y="50" class="icon_name">法規表單</text>
+                    </svg>
+                    <div class="main_list">
+                        <div class="upper_list">
+                            <div class="upper_list_content">
+                                <p class="upper_list_content_topic1">全部</p>
+                                <p class="upper_list_content_topic">課務相關</p>
+                                <p class="upper_list_content_topic">系徽</p>
+                                <p class="upper_list_content_topic">碩士論文</p>
+                                <p class="upper_list_content_topic">雙主修</p>
+                                <p class="upper_list_content_topic">轉系</p>
+                                <p class="upper_list_content_topic">課程先修申請</p>
+                                <p class="upper_list_content_topic">學士專區</p>
+                                <p class="upper_list_content_topic">實習</p>
+                                <p class="upper_list_content_topic">獎學金</p>
+                            </div>
+                        </div>
+                        <!-- End of upper list -->
+                        <div class="lower_list">
+                            <div class="lower_list_container">
+                                <div class="lower_list_block">
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">國立臺中教育大學 學分採認報告書(專門課程)-大學部專用</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">國立臺中教育大學 學分採認報告書-研究所專用</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">專門課程三修外系申請表</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">系徽</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">資訊工程學系碩士班研究生碩士學位考試實施要點(含附表) 112.6.1修正通過</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">資訊工程學系研究成果評審要點(112..6.1修正通過)</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">論文摘要格式說明</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">研究生論文指導教授同意書</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                    <div class="lower_list_content">
+                                        <p class="lower_list_content_topic">研究論文撰寫參考格式</p>
+                                        <div class="functional_button">
+                                            <div class="button">下載&ensp;</div>
+                                            <span>|</span>
+                                            <div class="button">&ensp;預覽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pages_block">
+                                    <div class="pages_container">
+                                        <div class="pages">
+                                            <a class="page_button">1</a>
+                                            <a class="page_button">2</a>
+                                            <a class="page_button">3</a>
+                                            <a class="page_button">4</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End of main page -->
+
+        <footer>
+            <div class="footer_block">
+                <div class="footer_content">
+                    <img class="big_icon" src="icon01.png">
+                    <div class="footer_information">
+                        <p class="footer_topic">臺中教育大學 資訊工程學系</p>
+                        <p class="text01">地址：403514臺中市西區民生路140號</p>
+                        <p class="text01">Address：No. 140, Minsheng Rd, West District, Taichung City, 403514</p>
+                        <p class="text01">辦公室：求真樓2樓 K202</p>
+                        <p class="text01">傳真：04-22183580</p>
+                        <p class="text02">電話：04-22183582</p>
+                        <p class="text02">E-mail：cis@mail.ntcu.edu.tw</p>
+                    </div>
+                </div>
+                <p class="copy_right_wronging">"Copyright © 2022 National Taichung University of Education, Computer Science  All Rights Reserved"</p>
+            </div>
+        </footer>
+        <!-- End of footer -->
+    </div>
+</body>
+<!-- End -->
